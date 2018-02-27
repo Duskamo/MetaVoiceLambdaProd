@@ -1,0 +1,52 @@
+//THIS IS AN EXAMPLE OF WHAT THIS SERVICE WILL OUTPUT. THIS ISNT MEANT TO BE USED. DELETE ALL LINES CONTAINING // BEFORE USE.
+
+{
+    //The email of the user, which will be used later on when we add verification
+    "email": "joe.broder15@gmail.com",
+
+    //Name info for verification
+    "firstName": "Joe",
+    "lastName": "Broder",
+
+    //Template to use when creating a skill. This will be used more in later versions of the product.
+    "template": "Alexa Interaction",
+
+    //Skill name that will appear in the store
+    "skillName": "testSkill",
+
+    //The phrase users say to invoke/activate the alexa skill
+    "invocationName": "example",
+
+    //Information for alexa intent map
+    "intents": [
+        {
+            //Intent name
+            "intent": "intent",
+
+            //Intent utterances (phrases used to activate each intent)
+            "utterances": {
+                "1": "utterance 1",
+                "2": "utterance 2",
+                "3": "utterance 3",
+                "4": "utterance 4",
+                "5": "utterance 5"
+            },
+      
+            //Response for an intent
+            "response": "Response"
+        }
+    ],
+    
+    //Category for the store
+    "category": "Smart Home",
+
+    //Descriptions for the store
+    "shortDescription": "test",
+    "longDescription": "test",
+
+    //Keywords for store
+    "keywords": "test",
+
+    //The code to be used in the lambda function
+    "code": "def create_response(text, shouldEndSession):\n    return {\n        'version': '1.0',\n        'sessionAttributes': {},\n        'response': {\n          'outputSpeech': {\n              'type': 'PlainText',\n              'text': text\n          },\n          'card': {\n              'type': 'Simple',\n              'title': 'testSkill',\n              'content': text\n          },\n          'reprompt': {\n              'outputSpeech': {\n                  'type': 'PlainText',\n                  'text': \"text\"\n              }\n          },\n          'shouldEndSession': shouldEndSession\n        }\n    }\n\n\ndef lambda_handler(event, context):\n\n    #on launch request prompt user to ask for help\n    if event['request']['type'] == 'LaunchRequest':\n        return create_response('If you dont know how to use me you can ask for help by saying help', False)\n\n    #give user utterances\n    elif event['request']['intent']['name'] == 'Help':\n        return create_response('There are several commands, try saying utterance 1', False)\n\n    #end session\n    elif event['request']['type'] == 'SessionEndedRequest':\n        return create_response('', True)\n\n    #end session\n    elif event['request']['intent']['name'] == 'endSession':\n        return create_response('', True)\n\n    #user defined intents\n    #paste content here\n    elif event['request']['intent']['name'] == 'intent':\n        return create_response('Response', True)\n\n"
+}

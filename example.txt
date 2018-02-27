@@ -1,0 +1,23 @@
+{
+  "template": "Alexa Interaction",
+  "skillName": "testSkill",
+  "invocationName": "Test Skill",
+  "intents":[
+    {
+      "intent": "abcd",
+      "utterances": {
+        "1": "test utterance 1",
+        "2": "test utterance 2",
+        "3": "test utterance 3",
+        "4": "test utterance 4",
+        "5": "test utterance 5",
+        "6": "test utterance 6"
+      },
+      "response": "test response"
+    }
+  ],
+  "category": "Sports",
+  "shortDescription": "short description",
+  "longDescription": "long description",
+  "keywords": "test"
+}

@@ -1,0 +1,49 @@
+//THIS IS AN EXAMPLE OF WHAT THIS SERVICE WILL OUTPUT. THIS ISNT MEANT TO BE USED. DELETE ALL LINES CONTAINING // BEFORE USE.
+
+{
+    //The email of the user, which will be used later on when we add verification
+    "email": "joe.broder15@gmail.com",
+
+    //Name info for verification
+    "firstName": "Joe",
+    "lastName": "Broder",
+
+    //Template to use when creating a skill. This will be used more in later versions of the product.
+    "template": "Alexa Interaction",
+
+    //Skill name that will appear in the store
+    "skillName": "testSkill",
+
+    //The phrase users say to invoke/activate the alexa skill
+    "invocationName": "example",
+
+    //Information for alexa intent map
+    "intents": [
+        {
+            //Intent name
+            "intent": "intent",
+
+            //Intent utterances (phrases used to activate each intent)
+            "utterances": {
+                "1": "utterance 1",
+                "2": "utterance 2",
+                "3": "utterance 3",
+                "4": "utterance 4",
+                "5": "utterance 5"
+            },
+      
+            //Response for an intent
+            "response": "Response"
+        }
+    ],
+    
+    //Category for the store
+    "category": "Smart Home",
+
+    //Descriptions for the store
+    "shortDescription": "test",
+    "longDescription": "test",
+
+    //Keywords for store
+    "keywords": "test"   
+}
