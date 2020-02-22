@@ -9,7 +9,7 @@ def create_response(text, shouldEndSession):
           },
           'card': {
               'type': 'Simple',
-              'title': 'mok',
+              'title': 'bhubh',
               'content': text
           },
           'reprompt': {
@@ -31,7 +31,7 @@ def lambda_handler(event, context):
 
     #give user utterances
     elif event['request']['intent']['name'] == 'Help':
-        return create_response('There are several commands, try saying mok', False)
+        return create_response('There are several commands, try saying ubh', False)
 
     #end session
     elif event['request']['type'] == 'SessionEndedRequest':
@@ -44,5 +44,5 @@ def lambda_handler(event, context):
     #user defined intents
     #paste content here
     elif event['request']['intent']['name'] == 'intent':
-        return create_response('in', True)
+        return create_response('bhu', True)
 

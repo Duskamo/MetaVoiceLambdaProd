@@ -31,7 +31,7 @@ def lambda_handler(event, context):
 
     #give user utterances
     elif event['request']['intent']['name'] == 'Help':
-        return create_response('There are several commands, try saying mok', False)
+        return create_response('There are several commands, try saying kmo', False)
 
     #end session
     elif event['request']['type'] == 'SessionEndedRequest':

@@ -32,7 +32,7 @@ def get_post_javascript_data():
 
     newJsonData = json.dumps(jsonData)
     
-    resp = requests.post('http://ec2-34-203-220-180.compute-1.amazonaws.com:5002/post',json=newJsonData)
+    resp = requests.post('http://localhost:5002/post',json=newJsonData)
 
     return  newJsonData
 
